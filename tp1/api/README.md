@@ -10,7 +10,7 @@ pnpm run dev
 Y abrir [http://localhost:3000/api/time](http://localhost:3000/api/time).
 
 Para hacer una build:
- 
+
 ```bash
 pnpm run test
 pnpm run lint
