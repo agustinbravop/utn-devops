@@ -1,9 +1,11 @@
 import js from "@eslint/js";
+import { defineConfig, globalIgnores } from "eslint/config";
 import tseslint from "typescript-eslint";
 
-export default [
+export default defineConfig([
   js.configs.recommended, // base rules for JS
   ...tseslint.configs.recommended, // TS support
+  globalIgnores(["dist/**", "coverage/**"]),
   {
     rules: {
       semi: ["error", "always"],
@@ -11,4 +13,4 @@ export default [
       "no-unused-vars": "warn",
     },
   },
-];
+]);

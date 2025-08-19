@@ -2,11 +2,11 @@
   "name": "api",
   "type": "module",
   "scripts": {
-    "start": "node dist/index.js",
+    "start": "node dist/server.js",
     "build": "tsc",
     "test": "vitest",
-    "dev": "tsx watch src/index.ts",
-    "lint": "eslint .",
+    "dev": "tsx watch src/server.ts",
+    "lint": "eslint . & tsc --noEmit",
     "format": "prettier --write ."
   },
   "dependencies": {
@@ -17,6 +17,7 @@
   "devDependencies": {
     "@eslint/js": "^9.33.0",
     "@types/node": "^20.11.17",
+    "@vitest/coverage-v8": "^3.2.4",
     "eslint": "^9.33.0",
     "tsx": "^4.7.1",
     "typescript": "^5.8.3",
