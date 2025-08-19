@@ -26,16 +26,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 9
+          run_install: true
+          
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: pnpm
           cache-dependency-path: api/pnpm-lock.yaml
-
-      - uses: pnpm/action-setup@v3
-        with:
-          version: 9
-          run_install: true
 
       - name: ESLint
         run: pnpm lint
@@ -49,16 +49,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 9
+          run_install: true
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: pnpm
           cache-dependency-path: api/pnpm-lock.yaml
-
-      - uses: pnpm/action-setup@v3
-        with:
-          version: 9
-          run_install: true
 
       - name: Vitest (coverage)
         run: pnpm test -- --run --coverage
